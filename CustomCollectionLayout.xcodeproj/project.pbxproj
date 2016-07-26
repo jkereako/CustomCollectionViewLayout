@@ -35,17 +35,17 @@
 		8259A7E21A3ED3A00027F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8259A7E31A3ED3A00027F925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		8259A7EA1A3ED3A00027F925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CustomCollectionLayout/Images.xcassets; sourceTree = "<group>"; };
+		8259A7EA1A3ED3A00027F925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8259A7ED1A3ED3A10027F925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8259A7F31A3ED3A10027F925 /* CustomCollectionLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomCollectionLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8259A7F81A3ED3A10027F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8259A7F91A3ED3A10027F925 /* CustomCollectionLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionLayoutTests.swift; sourceTree = "<group>"; };
-		8259A80F1A3ED55F0027F925 /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionViewController.xib; path = CustomCollectionLayout/CollectionViewController.xib; sourceTree = "<group>"; };
-		8259A8111A3ED5AC0027F925 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionViewLayout.swift; path = CustomCollectionLayout/CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
+		8259A80F1A3ED55F0027F925 /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		8259A8111A3ED5AC0027F925 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		827A97161A603DD80055CFA1 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
-		827A97171A603DD80055CFA1 /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateCollectionViewCell.xib; path = CustomCollectionLayout/DateCollectionViewCell.xib; sourceTree = "<group>"; };
+		827A97171A603DD80055CFA1 /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
 		827A971C1A603E600055CFA1 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
-		827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentCollectionViewCell.xib; path = CustomCollectionLayout/ContentCollectionViewCell.xib; sourceTree = "<group>"; };
+		827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +69,13 @@
 		36E2CCBD1D47E8FB00DFCACA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8259A7EA1A3ED3A00027F925 /* Images.xcassets */,
-				8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */,
+				8259A80F1A3ED55F0027F925 /* CollectionViewController.xib */,
 				827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */,
 				827A97171A603DD80055CFA1 /* DateCollectionViewCell.xib */,
-				8259A80F1A3ED55F0027F925 /* CollectionViewController.xib */,
+				8259A7EA1A3ED3A00027F925 /* Images.xcassets */,
+				8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		36E2CCBE1D47E90100DFCACA /* Library */ = {
@@ -83,18 +83,18 @@
 			children = (
 				8259A8111A3ED5AC0027F925 /* CustomCollectionViewLayout.swift */,
 			);
-			name = Library;
+			path = Library;
 			sourceTree = "<group>";
 		};
 		8259A7D51A3ED3A00027F925 = {
 			isa = PBXGroup;
 			children = (
-				8259A7E11A3ED3A00027F925 /* SupportFiles */,
 				36E2CCBE1D47E90100DFCACA /* Library */,
+				8259A7DF1A3ED3A00027F925 /* Products */,
 				36E2CCBD1D47E8FB00DFCACA /* Resources */,
 				8259A7E01A3ED3A00027F925 /* Source */,
+				8259A7E11A3ED3A00027F925 /* SupportFiles */,
 				8259A7F61A3ED3A10027F925 /* Tests */,
-				8259A7DF1A3ED3A00027F925 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,12 +110,11 @@
 		8259A7E01A3ED3A00027F925 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				827A97151A603DAB0055CFA1 /* Views */,
 				8259A80E1A3ED5480027F925 /* Controllers */,
+				827A97151A603DAB0055CFA1 /* Views */,
 				8259A7E31A3ED3A00027F925 /* AppDelegate.swift */,
 			);
-			name = Source;
-			path = CustomCollectionLayout;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		8259A7E11A3ED3A00027F925 /* SupportFiles */ = {
@@ -123,18 +122,16 @@
 			children = (
 				8259A7E21A3ED3A00027F925 /* Info.plist */,
 			);
-			name = SupportFiles;
-			path = CustomCollectionLayout;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		8259A7F61A3ED3A10027F925 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8259A7F91A3ED3A10027F925 /* CustomCollectionLayoutTests.swift */,
 				8259A7F71A3ED3A10027F925 /* SupportFiles */,
+				8259A7F91A3ED3A10027F925 /* CustomCollectionLayoutTests.swift */,
 			);
-			name = Tests;
-			path = CustomCollectionLayoutTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		8259A7F71A3ED3A10027F925 /* SupportFiles */ = {
@@ -142,7 +139,7 @@
 			children = (
 				8259A7F81A3ED3A10027F925 /* Info.plist */,
 			);
-			name = SupportFiles;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		8259A80E1A3ED5480027F925 /* Controllers */ = {
@@ -150,7 +147,7 @@
 			children = (
 				8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		827A97151A603DAB0055CFA1 /* Views */ = {
@@ -159,7 +156,7 @@
 				827A971C1A603E600055CFA1 /* ContentCollectionViewCell.swift */,
 				827A97161A603DD80055CFA1 /* DateCollectionViewCell.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +296,7 @@
 				8259A7ED1A3ED3A10027F925 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = CustomCollectionLayout;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -387,7 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CustomCollectionLayout/Info.plist;
+				INFOPLIST_FILE = SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -398,7 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CustomCollectionLayout/Info.plist;
+				INFOPLIST_FILE = SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -417,7 +414,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CustomCollectionLayoutTests/Info.plist;
+				INFOPLIST_FILE = Tests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -433,7 +430,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CustomCollectionLayoutTests/Info.plist;
+				INFOPLIST_FILE = Tests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
