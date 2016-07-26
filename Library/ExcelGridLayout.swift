@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCollectionViewLayout: UICollectionViewLayout {
+class ExcelGridLayout: UICollectionViewLayout {
   let numberOfColumns = 8
   var itemAttributes: [[UICollectionViewLayoutAttributes]]!
   var itemsSize: [CGSize]!

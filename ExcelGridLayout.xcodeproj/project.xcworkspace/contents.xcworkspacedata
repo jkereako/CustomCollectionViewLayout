@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CustomCollectionLayout.xcodeproj">
+      location = "self:/Users/jkereakoglow/src/swift/CustomCollectionViewLayout/ExcelGridLayout.xcodeproj">
    </FileRef>
 </Workspace>

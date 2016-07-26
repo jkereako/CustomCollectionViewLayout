@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionViewController" customModule="CustomCollectionLayout" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionViewController" customModule="ExcelGridLayout" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="IGm-uP-jnG" id="dRO-Et-75h"/>
                 <outlet property="view" destination="iN0-l3-epB" id="K0q-Z3-X32"/>
@@ -19,7 +19,7 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IGm-uP-jnG">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <collectionViewLayout key="collectionViewLayout" id="FQE-rR-b0n" customClass="CustomCollectionViewLayout" customModule="CustomCollectionLayout" customModuleProvider="target"/>
+                    <collectionViewLayout key="collectionViewLayout" id="FQE-rR-b0n" customClass="ExcelGridLayout" customModule="ExcelGridLayout" customModuleProvider="target"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="nvK-Oa-WDw"/>
                         <outlet property="delegate" destination="-1" id="aTv-YE-xBp"/>
@@ -33,7 +33,7 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="Custom Collection Layout | Brightec" id="6rm-jF-nzk"/>
+                        <navigationItem title="Excel Grid Layout | Brightec" id="6rm-jF-nzk"/>
                     </items>
                 </navigationBar>
             </subviews>
