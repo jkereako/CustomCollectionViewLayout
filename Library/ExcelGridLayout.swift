@@ -9,9 +9,10 @@
 import UIKit
 
 class ExcelGridLayout: UICollectionViewLayout {
-  let numberOfColumns = 8
+  weak var delegate: ExcelGridLayoutDelegate!
+  
   var itemAttributes: [[UICollectionViewLayoutAttributes]]!
-  var itemsSize: [CGSize]!
+  var itemsSize = [CGSize]()
   var contentSize: CGSize!
   
   override func prepareLayout() {
@@ -48,8 +49,17 @@ class ExcelGridLayout: UICollectionViewLayout {
       return
     }
     
-    if (self.itemsSize == nil || self.itemsSize.count != numberOfColumns) {
-      self.calculateItemsSize()
+    let numberOfColumns = delegate.numberOfColumnsInCollectionView(
+      collectionView!, layout: self
+    )
+    
+    if (itemsSize.count != numberOfColumns) {
+
+      for index in 0..<numberOfColumns {
+        itemsSize.append(delegate.collectionView(
+          collectionView!, layout: self, sizeForItemAtColumn: UInt(index))
+        )
+      }
     }
     
     var column = 0
@@ -150,40 +160,5 @@ class ExcelGridLayout: UICollectionViewLayout {
   
   override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
     return true
-  }
-  
-  func sizeForItemWithColumnIndex(columnIndex: Int) -> CGSize {
-    var text = ""
-    switch (columnIndex) {
-    case 0:
-      text = "Col 0"
-    case 1:
-      text = "Col 1"
-    case 2:
-      text = "Col 2"
-    case 3:
-      text = "Col 3"
-    case 4:
-      text = "Col 4"
-    case 5:
-      text = "Col 5"
-    case 6:
-      text = "Col 6"
-    default:
-      text = "Col 7"
-    }
-    
-    let size = (text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
-    let width = size.width + 25
-    
-    return CGSize(width: width, height: 30)
-  }
-  
-  func calculateItemsSize() {
-    itemsSize = [CGSize]()
-    
-    for index in 0..<numberOfColumns {
-      self.itemsSize.append(sizeForItemWithColumnIndex(index))
-    }
   }
 }

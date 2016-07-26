@@ -26,6 +26,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
       UINib(nibName: "ContentCollectionViewCell", bundle: nil),
       forCellWithReuseIdentifier: contentCellIdentifier
     )
+    
+    let layout = collectionView.collectionViewLayout as! ExcelGridLayout
+    layout.delegate = self
   }
   
   // MARK - UICollectionViewDataSource
@@ -51,7 +54,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
         return dateCell
       }
-      
+        
       else {
         let contentCell = collectionView.dequeueReusableCellWithReuseIdentifier(
           contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
@@ -69,7 +72,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         return contentCell
       }
     }
-    
+      
     else {
       if indexPath.row == 0 {
         let dateCell = collectionView.dequeueReusableCellWithReuseIdentifier(
@@ -81,14 +84,14 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         if indexPath.section % 2 != 0 {
           dateCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
         }
-        
+          
         else {
           dateCell.backgroundColor = UIColor.whiteColor()
         }
         
         return dateCell
       }
-      
+        
       else {
         let contentCell = collectionView.dequeueReusableCellWithReuseIdentifier(
           contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
@@ -100,7 +103,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         if indexPath.section % 2 != 0 {
           contentCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
         }
-        
+          
         else {
           contentCell.backgroundColor = UIColor.whiteColor()
         }
@@ -108,5 +111,25 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         return contentCell
       }
     }
+  }
+}
+
+extension CollectionViewController: ExcelGridLayoutDelegate {
+  func numberOfColumnsInCollectionView(cv: UICollectionView, layout: UICollectionViewLayout) -> Int {
+    return 8
+  }
+  
+  func collectionView(cv: UICollectionView, layout: UICollectionViewLayout,
+                      sizeForItemAtColumn column: UInt) -> CGSize {
+    
+    let title = "Section"
+    
+    let size = (title as NSString).sizeWithAttributes(
+      [NSFontAttributeName: UIFont.systemFontOfSize(17.0)]
+    )
+    
+    let width = size.width + 25
+    
+    return CGSize(width: width, height: 30)
   }
 }

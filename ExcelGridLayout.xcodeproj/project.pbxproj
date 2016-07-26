@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36E2CCC21D47F1F800DFCACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E2CCC11D47F1F800DFCACA /* Main.storyboard */; };
+		36E2CCC41D47F57900DFCACA /* ExcelGridLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2CCC31D47F57900DFCACA /* ExcelGridLayoutDelegate.swift */; };
 		8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E31A3ED3A00027F925 /* AppDelegate.swift */; };
 		8259A7E61A3ED3A00027F925 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */; };
 		8259A7EB1A3ED3A00027F925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EA1A3ED3A00027F925 /* Images.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		36E2CCC11D47F1F800DFCACA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		36E2CCC31D47F57900DFCACA /* ExcelGridLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelGridLayoutDelegate.swift; sourceTree = "<group>"; };
 		8259A7DE1A3ED3A00027F925 /* ExcelGridLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExcelGridLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8259A7E21A3ED3A00027F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8259A7E31A3ED3A00027F925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				8259A8111A3ED5AC0027F925 /* ExcelGridLayout.swift */,
+				36E2CCC31D47F57900DFCACA /* ExcelGridLayoutDelegate.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E2CCC41D47F57900DFCACA /* ExcelGridLayoutDelegate.swift in Sources */,
 				827A97181A603DD80055CFA1 /* DateCollectionViewCell.swift in Sources */,
 				8259A7E61A3ED3A00027F925 /* CollectionViewController.swift in Sources */,
 				8259A8121A3ED5AC0027F925 /* ExcelGridLayout.swift in Sources */,
