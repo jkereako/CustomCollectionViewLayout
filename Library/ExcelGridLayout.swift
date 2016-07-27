@@ -11,20 +11,24 @@ import UIKit
 class ExcelGridLayout: UICollectionViewLayout {
   weak var delegate: ExcelGridLayoutDelegate!
   
-  var itemAttributes: [[UICollectionViewLayoutAttributes]]!
-  var itemsSize = [CGSize]()
-  var contentSize: CGSize!
+  private var layoutAttributesCache: [[UICollectionViewLayoutAttributes]]!
+  private var layoutRectCache = CGRectZero
+  private var itemsSize = [CGSize]()
+  private var contentSize: CGSize!
   
   override func prepareLayout() {
-    guard collectionView?.numberOfSections() > 0 else {
+    super.prepareLayout()
+    
+    guard let cv = collectionView where cv.numberOfSections() > 0 else {
       return
     }
     
-    if itemAttributes != nil && itemAttributes.count > 0 {
+    if layoutAttributesCache != nil && layoutAttributesCache.count > 0 {
       
-      for section in 0..<collectionView!.numberOfSections() {
-        let numberOfItems = collectionView!.numberOfItemsInSection(section)
-        for index in 0..<numberOfItems {
+      for section in 0..<cv.numberOfSections() {
+        let itemCount = cv.numberOfItemsInSection(section)
+        
+        for index in 0..<itemCount {
           if section != 0 && index != 0 {
             continue
           }
@@ -35,13 +39,13 @@ class ExcelGridLayout: UICollectionViewLayout {
           
           if section == 0 {
             var frame = attributes.frame
-            frame.origin.y = self.collectionView!.contentOffset.y
+            frame.origin.y = cv.contentOffset.y
             attributes.frame = frame
           }
           
           if index == 0 {
             var frame = attributes.frame
-            frame.origin.x = self.collectionView!.contentOffset.x
+            frame.origin.x = cv.contentOffset.x
             attributes.frame = frame
           }
         }
@@ -49,15 +53,15 @@ class ExcelGridLayout: UICollectionViewLayout {
       return
     }
     
-    let numberOfColumns = delegate.numberOfColumnsInCollectionView(
-      collectionView!, layout: self
-    )
+    let columnCount = delegate.numberOfColumnsInCollectionView(cv, layout: self)
     
-    if (itemsSize.count != numberOfColumns) {
-
-      for index in 0..<numberOfColumns {
-        itemsSize.append(delegate.collectionView(
-          collectionView!, layout: self, sizeForItemAtColumn: UInt(index))
+    if itemsSize.count != columnCount {
+      
+      for index in 0..<columnCount {
+        itemsSize.append(
+          delegate.collectionView(
+            cv, layout: self, sizeForItemAtColumn: UInt(index)
+          )
         )
       }
     }
@@ -68,10 +72,10 @@ class ExcelGridLayout: UICollectionViewLayout {
     var contentWidth : CGFloat = 0
     var contentHeight : CGFloat = 0
     
-    for section in 0..<collectionView!.numberOfSections() {
+    for section in 0..<cv.numberOfSections() {
       var sectionAttributes = [UICollectionViewLayoutAttributes]()
       
-      for index in 0..<numberOfColumns {
+      for index in 0..<columnCount {
         let itemSize = itemsSize[index]
         let indexPath = NSIndexPath(forItem: index, inSection: section)
         let attributes = UICollectionViewLayoutAttributes(
@@ -90,20 +94,20 @@ class ExcelGridLayout: UICollectionViewLayout {
         if section == 0 && index == 0 {
           attributes.zIndex = 1024;
         }
-        
+          
         else if section == 0 || index == 0 {
           attributes.zIndex = 1023
         }
         
         if section == 0 {
           var frame = attributes.frame
-          frame.origin.y = self.collectionView!.contentOffset.y
+          frame.origin.y = cv.contentOffset.y
           attributes.frame = frame
         }
         
         if index == 0 {
           var frame = attributes.frame
-          frame.origin.x = self.collectionView!.contentOffset.x
+          frame.origin.x = cv.contentOffset.x
           attributes.frame = frame
         }
         
@@ -112,7 +116,7 @@ class ExcelGridLayout: UICollectionViewLayout {
         xOffset += itemSize.width
         column += 1
         
-        if column == numberOfColumns {
+        if column == columnCount {
           if xOffset > contentWidth {
             contentWidth = xOffset
           }
@@ -122,13 +126,13 @@ class ExcelGridLayout: UICollectionViewLayout {
           yOffset += itemSize.height
         }
       }
-      if itemAttributes == nil {
-        self.itemAttributes = [[UICollectionViewLayoutAttributes]]()
+      if layoutAttributesCache == nil {
+        layoutAttributesCache = [[UICollectionViewLayoutAttributes]]()
       }
-      self.itemAttributes.append(sectionAttributes)
+      layoutAttributesCache.append(sectionAttributes)
     }
     
-    let attributes = itemAttributes.last?.last
+    let attributes = layoutAttributesCache.last?.last
     contentHeight = attributes!.frame.origin.y + attributes!.frame.size.height
     contentSize =  CGSize(width: contentWidth, height: contentHeight)
   }
@@ -138,14 +142,23 @@ class ExcelGridLayout: UICollectionViewLayout {
   }
   
   override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-    return itemAttributes[indexPath.section][indexPath.row]
+    guard layoutAttributesCache.count > indexPath.section && layoutAttributesCache[indexPath.section].count > indexPath.row else {
+      assertionFailure("Index out of bounds")
+      return nil
+    }
+    
+    return layoutAttributesCache[indexPath.section][indexPath.row]
   }
   
   override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//    if CGRectEqualToRect(rect, layoutRectCache) {
+//      return layoutAttributesCache
+//    }
+    
     var attributes = [UICollectionViewLayoutAttributes]()
     
-    if itemAttributes != nil {
-      for section in self.itemAttributes {
+    if layoutAttributesCache != nil {
+      for section in layoutAttributesCache {
         
         let filtered = section.filter {
           obj in return CGRectIntersectsRect(rect, obj.frame)
@@ -160,5 +173,9 @@ class ExcelGridLayout: UICollectionViewLayout {
   
   override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
     return true
+  }
+  
+  override func invalidateLayout() {
+    super.invalidateLayout()
   }
 }
