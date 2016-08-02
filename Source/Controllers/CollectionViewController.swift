@@ -115,10 +115,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 }
 
 extension CollectionViewController: ExcelGridLayoutDelegate {
-  func numberOfColumnsInCollectionView(cv: UICollectionView, layout: UICollectionViewLayout) -> Int {
-    return 8
-  }
-  
   func collectionView(cv: UICollectionView, layout: UICollectionViewLayout,
                       sizeForItemAtColumn column: UInt) -> CGSize {
     

@@ -11,9 +11,6 @@ import Foundation
 import UIKit
 
 protocol ExcelGridLayoutDelegate: UICollectionViewDelegate {
-  func numberOfColumnsInCollectionView(cv: UICollectionView,
-                                       layout: UICollectionViewLayout) -> Int
-  
   func collectionView(cv: UICollectionView, layout: UICollectionViewLayout,
                       sizeForItemAtColumn column: UInt) -> CGSize
 }
