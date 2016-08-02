@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExcelGridLayout: UICollectionViewLayout {
+final class ExcelGridLayout: UICollectionViewLayout {
   weak var delegate: ExcelGridLayoutDelegate!
   
   private var layoutAttributesCache: [UICollectionViewLayoutAttributes]!

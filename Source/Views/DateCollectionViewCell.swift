@@ -8,6 +8,6 @@
 
 import UIKit
 
-class DateCollectionViewCell: UICollectionViewCell {
+final class DateCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var dateLabel: UILabel!
 }

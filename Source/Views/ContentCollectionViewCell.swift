@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ContentCollectionViewCell: UICollectionViewCell {
+final class ContentCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var contentLabel: UILabel!
 }

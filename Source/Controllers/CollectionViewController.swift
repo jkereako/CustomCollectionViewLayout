@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+final class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
   private var dateSizingCell: DateCollectionViewCell!
   private var contentSizingCell: ContentCollectionViewCell!
   
