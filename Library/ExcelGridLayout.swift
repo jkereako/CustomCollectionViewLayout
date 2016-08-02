@@ -16,25 +16,21 @@ class ExcelGridLayout: UICollectionViewLayout {
   private var contentSizeCache = CGSizeZero
   
   override func collectionViewContentSize() -> CGSize {
-    if !CGSizeEqualToSize(contentSizeCache, CGSizeZero) {
+    guard CGSizeEqualToSize(contentSizeCache, CGSizeZero) else {
       return contentSizeCache
     }
     
-    guard let d = delegate, let cv = collectionView else {
-      return CGSizeZero
-    }
-    
-    let columnCount = cv.numberOfItemsInSection(0)
-    let rowCount = cv.numberOfSections()
-    
+    let columnCount = collectionView!.numberOfItemsInSection(0)
+    let rowCount = collectionView!.numberOfSections()
     var contentSize = CGSizeZero
     
     for column in 0..<columnCount {
-      let itemSize = d.collectionView(cv, layout: self, sizeForItemAtColumn: UInt(column))
-      contentSize.width += itemSize.width
+      contentSize.width += delegate.width(forColumn: UInt(column), collectionView: collectionView!)
     }
     
-    contentSize.height = d.collectionView(cv, layout: self, sizeForItemAtColumn: 0).height * CGFloat(rowCount)
+    for row in 0..<rowCount {
+      contentSize.height += delegate.height(forRow: UInt(row), collectionView: collectionView!)
+    }
     
     contentSizeCache = contentSize
     
@@ -42,12 +38,11 @@ class ExcelGridLayout: UICollectionViewLayout {
   }
   
   override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-    guard let d = delegate, let cv = collectionView else {
-      assertionFailure("Expected delegate and collection view")
-      return nil
-    }
+    let itemSize = CGSize(
+      width: delegate.width(forColumn: UInt(indexPath.row), collectionView: collectionView!),
+      height: delegate.height(forRow: UInt(indexPath.section), collectionView: collectionView!)
+    )
     
-    let itemSize = d.collectionView(cv, layout: self, sizeForItemAtColumn: UInt(indexPath.row))
     let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
     
     attributes.frame = CGRectIntegral(
@@ -72,13 +67,13 @@ class ExcelGridLayout: UICollectionViewLayout {
     
     if indexPath.section == 0 {
       var frame = attributes.frame
-      frame.origin.y = cv.contentOffset.y
+      frame.origin.y = collectionView!.contentOffset.y
       attributes.frame = frame
     }
     
     if indexPath.row == 0 {
       var frame = attributes.frame
-      frame.origin.x = cv.contentOffset.x
+      frame.origin.x = collectionView!.contentOffset.x
       attributes.frame = frame
     }
     
@@ -86,7 +81,7 @@ class ExcelGridLayout: UICollectionViewLayout {
   }
   
   override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-    if CGRectEqualToRect(rect, layoutAttributesInRectCache) {
+    guard !CGRectEqualToRect(rect, layoutAttributesInRectCache) else {
       return layoutAttributesCache
     }
     

@@ -11,6 +11,6 @@ import Foundation
 import UIKit
 
 protocol ExcelGridLayoutDelegate: UICollectionViewDelegate {
-  func collectionView(cv: UICollectionView, layout: UICollectionViewLayout,
-                      sizeForItemAtColumn column: UInt) -> CGSize
+  func width(forColumn column: UInt, collectionView: UICollectionView) -> CGFloat
+  func height(forRow row: UInt, collectionView: UICollectionView) -> CGFloat
 }

@@ -9,6 +9,9 @@
 import UIKit
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+  private var dateSizingCell: DateCollectionViewCell!
+  private var contentSizingCell: ContentCollectionViewCell!
+  
   let dateCellIdentifier = "DateCellIdentifier"
   let contentCellIdentifier = "ContentCellIdentifier"
   
@@ -17,25 +20,26 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    collectionView.registerNib(
-      UINib(nibName: "DateCollectionViewCell", bundle: nil),
-      forCellWithReuseIdentifier: dateCellIdentifier
-    )
+    let dateNib = UINib(nibName: "DateCollectionViewCell", bundle: nil)
+    let contentNib = UINib(nibName: "ContentCollectionViewCell", bundle: nil)
     
-    collectionView.registerNib(
-      UINib(nibName: "ContentCollectionViewCell", bundle: nil),
-      forCellWithReuseIdentifier: contentCellIdentifier
-    )
+    collectionView.registerNib(dateNib, forCellWithReuseIdentifier: dateCellIdentifier)
+    collectionView.registerNib(contentNib, forCellWithReuseIdentifier: contentCellIdentifier)
+    
+    dateSizingCell = dateNib.instantiateWithOwner(nil, options: nil).first as! DateCollectionViewCell
+    contentSizingCell = contentNib.instantiateWithOwner(nil, options: nil).first as! ContentCollectionViewCell
     
     let layout = collectionView.collectionViewLayout as! ExcelGridLayout
     layout.delegate = self
   }
   
   // MARK - UICollectionViewDataSource
+  // i.e. number of rows
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
     return 50
   }
   
+  // i.e. number of columns
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 8
   }
@@ -115,17 +119,16 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 }
 
 extension CollectionViewController: ExcelGridLayoutDelegate {
-  func collectionView(cv: UICollectionView, layout: UICollectionViewLayout,
-                      sizeForItemAtColumn column: UInt) -> CGSize {
-    
-    let title = "Section"
-    
-    let size = (title as NSString).sizeWithAttributes(
-      [NSFontAttributeName: UIFont.systemFontOfSize(17.0)]
-    )
-    
-    let width = size.width + 25
-    
-    return CGSize(width: width, height: 30)
+  func width(forColumn column: UInt, collectionView: UICollectionView) -> CGFloat {
+    return dateSizingCell.frame.width
+  }
+  
+  func height(forRow row: UInt, collectionView: UICollectionView) -> CGFloat {
+    switch row {
+    case 0:
+      return dateSizingCell.frame.height
+    default:
+      return contentSizingCell.frame.height
+    }
   }
 }
