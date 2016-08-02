@@ -65,7 +65,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
         contentCell.contentLabel.font = UIFont.systemFontOfSize(13)
         contentCell.contentLabel.textColor = UIColor.blackColor()
-        contentCell.contentLabel.text = "Section"
+        contentCell.contentLabel.text = "Column \(indexPath.row)"
         
         if indexPath.section % 2 != 0 {
           contentCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
