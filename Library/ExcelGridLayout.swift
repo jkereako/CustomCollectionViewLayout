@@ -54,15 +54,17 @@ final class ExcelGridLayout: UICollectionViewLayout {
       )
     )
     
+    attributes.zIndex = 0
+    
     // Set this value for the first item (Sec0Row0) in order to make it visible over first column
     // and first row
     if indexPath.section == 0 && indexPath.row == 0 {
-      attributes.zIndex = 1024
+      attributes.zIndex = 2
     }
       
       // Set this value for the first row or section in order to set visible over the rest of the items
     else if indexPath.section == 0 || indexPath.row == 0 {
-      attributes.zIndex = 1023
+      attributes.zIndex = 1
     }
     
     if indexPath.section == 0 {
