@@ -1,10 +1,9 @@
-CustomCollectionViewLayout
-==========================
+# Description
+Lays out a UICollectionView as if it were an Excel spread sheet. The top row and
+the left column are sticky when scrolling.
 
-Custom layout for a collection view using horizontal and vertical scrolling with sticky rows and columns
-Written in both <b>Swift</b> and <b>Objective-C</b>.
-Full example added in Swift.
+This was forked from [Brightec's CustomCollectionViewLayout][fork]
 
 ![alt tag](https://github.com/brightec/CustomCollectionViewLayout/blob/master/customCollectionLayoutDemo.gif)
 
-Tutorial on <a href="http://www.brightec.co.uk/blog/uicollectionview-using-horizontal-and-vertical-scrolling-sticky-rows-and-columns">Brightec blog</a>
+[fork]: https://github.com/brightec/CustomCollectionViewLayout
