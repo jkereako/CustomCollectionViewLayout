@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		36E2CCC21D47F1F800DFCACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E2CCC11D47F1F800DFCACA /* Main.storyboard */; };
-		36E2CCC41D47F57900DFCACA /* ExcelGridLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2CCC31D47F57900DFCACA /* ExcelGridLayoutDelegate.swift */; };
+		36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */; };
 		8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E31A3ED3A00027F925 /* AppDelegate.swift */; };
 		8259A7E61A3ED3A00027F925 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */; };
 		8259A7EB1A3ED3A00027F925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EA1A3ED3A00027F925 /* Images.xcassets */; };
 		8259A7EE1A3ED3A10027F925 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */; };
 		8259A7FA1A3ED3A10027F925 /* CustomCollectionLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7F91A3ED3A10027F925 /* CustomCollectionLayoutTests.swift */; };
-		8259A8121A3ED5AC0027F925 /* ExcelGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A8111A3ED5AC0027F925 /* ExcelGridLayout.swift */; };
+		8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */; };
 		827A97181A603DD80055CFA1 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A97161A603DD80055CFA1 /* DateCollectionViewCell.swift */; };
 		827A97191A603DD80055CFA1 /* DateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827A97171A603DD80055CFA1 /* DateCollectionViewCell.xib */; };
 		827A971E1A603E600055CFA1 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A971C1A603E600055CFA1 /* ContentCollectionViewCell.swift */; };
@@ -33,17 +33,17 @@
 
 /* Begin PBXFileReference section */
 		36E2CCC11D47F1F800DFCACA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		36E2CCC31D47F57900DFCACA /* ExcelGridLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelGridLayoutDelegate.swift; sourceTree = "<group>"; };
-		8259A7DE1A3ED3A00027F925 /* ExcelGridLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExcelGridLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayoutDelegate.swift; sourceTree = "<group>"; };
+		8259A7DE1A3ED3A00027F925 /* SpreadsheetLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpreadsheetLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8259A7E21A3ED3A00027F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8259A7E31A3ED3A00027F925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		8259A7EA1A3ED3A00027F925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8259A7ED1A3ED3A10027F925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8259A7F31A3ED3A10027F925 /* ExcelGridLayout.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExcelGridLayout.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8259A7F31A3ED3A10027F925 /* SpreadsheetLayout.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpreadsheetLayout.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8259A7F81A3ED3A10027F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8259A7F91A3ED3A10027F925 /* CustomCollectionLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionLayoutTests.swift; sourceTree = "<group>"; };
-		8259A8111A3ED5AC0027F925 /* ExcelGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelGridLayout.swift; sourceTree = "<group>"; };
+		8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayout.swift; sourceTree = "<group>"; };
 		827A97161A603DD80055CFA1 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		827A97171A603DD80055CFA1 /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
 		827A971C1A603E600055CFA1 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 		36E2CCBE1D47E90100DFCACA /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				8259A8111A3ED5AC0027F925 /* ExcelGridLayout.swift */,
-				36E2CCC31D47F57900DFCACA /* ExcelGridLayoutDelegate.swift */,
+				8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */,
+				36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -104,8 +104,8 @@
 		8259A7DF1A3ED3A00027F925 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8259A7DE1A3ED3A00027F925 /* ExcelGridLayout.app */,
-				8259A7F31A3ED3A10027F925 /* ExcelGridLayout.xctest */,
+				8259A7DE1A3ED3A00027F925 /* SpreadsheetLayout.app */,
+				8259A7F31A3ED3A10027F925 /* SpreadsheetLayout.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8259A7DD1A3ED3A00027F925 /* ExcelGridLayout */ = {
+		8259A7DD1A3ED3A00027F925 /* SpreadsheetLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8259A7FD1A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "ExcelGridLayout" */;
+			buildConfigurationList = 8259A7FD1A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "SpreadsheetLayout" */;
 			buildPhases = (
 				8259A7DA1A3ED3A00027F925 /* Sources */,
 				8259A7DB1A3ED3A00027F925 /* Frameworks */,
@@ -177,14 +177,14 @@
 			);
 			dependencies = (
 			);
-			name = ExcelGridLayout;
+			name = SpreadsheetLayout;
 			productName = CustomCollectionLayout;
-			productReference = 8259A7DE1A3ED3A00027F925 /* ExcelGridLayout.app */;
+			productReference = 8259A7DE1A3ED3A00027F925 /* SpreadsheetLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8259A7F21A3ED3A10027F925 /* ExcelGridLayoutTests */ = {
+		8259A7F21A3ED3A10027F925 /* SpreadsheetLayoutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8259A8001A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "ExcelGridLayoutTests" */;
+			buildConfigurationList = 8259A8001A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "SpreadsheetLayoutTests" */;
 			buildPhases = (
 				8259A7EF1A3ED3A10027F925 /* Sources */,
 				8259A7F01A3ED3A10027F925 /* Frameworks */,
@@ -195,9 +195,9 @@
 			dependencies = (
 				8259A7F51A3ED3A10027F925 /* PBXTargetDependency */,
 			);
-			name = ExcelGridLayoutTests;
+			name = SpreadsheetLayoutTests;
 			productName = CustomCollectionLayoutTests;
-			productReference = 8259A7F31A3ED3A10027F925 /* ExcelGridLayout.xctest */;
+			productReference = 8259A7F31A3ED3A10027F925 /* SpreadsheetLayout.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8259A7D91A3ED3A00027F925 /* Build configuration list for PBXProject "ExcelGridLayout" */;
+			buildConfigurationList = 8259A7D91A3ED3A00027F925 /* Build configuration list for PBXProject "SpreadsheetLayout" */;
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -233,8 +233,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8259A7DD1A3ED3A00027F925 /* ExcelGridLayout */,
-				8259A7F21A3ED3A10027F925 /* ExcelGridLayoutTests */,
+				8259A7DD1A3ED3A00027F925 /* SpreadsheetLayout */,
+				8259A7F21A3ED3A10027F925 /* SpreadsheetLayoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,10 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36E2CCC41D47F57900DFCACA /* ExcelGridLayoutDelegate.swift in Sources */,
+				36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */,
 				827A97181A603DD80055CFA1 /* DateCollectionViewCell.swift in Sources */,
 				8259A7E61A3ED3A00027F925 /* CollectionViewController.swift in Sources */,
-				8259A8121A3ED5AC0027F925 /* ExcelGridLayout.swift in Sources */,
+				8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */,
 				8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */,
 				827A971E1A603E600055CFA1 /* ContentCollectionViewCell.swift in Sources */,
 			);
@@ -288,7 +288,7 @@
 /* Begin PBXTargetDependency section */
 		8259A7F51A3ED3A10027F925 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8259A7DD1A3ED3A00027F925 /* ExcelGridLayout */;
+			target = 8259A7DD1A3ED3A00027F925 /* SpreadsheetLayout */;
 			targetProxy = 8259A7F41A3ED3A10027F925 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -389,9 +389,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SupportFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ExcelGridLayout;
+				PRODUCT_NAME = SpreadsheetLayout;
 			};
 			name = Debug;
 		};
@@ -400,9 +401,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SupportFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ExcelGridLayout;
+				PRODUCT_NAME = SpreadsheetLayout;
 			};
 			name = Release;
 		};
@@ -421,8 +423,8 @@
 				INFOPLIST_FILE = Tests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ExcelGridLayout;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExcelGridLayout.app/ExcelGridLayout";
+				PRODUCT_NAME = SpreadsheetLayout;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpreadsheetLayout.app/SpreadsheetLayout";
 			};
 			name = Debug;
 		};
@@ -437,15 +439,15 @@
 				INFOPLIST_FILE = Tests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ExcelGridLayout;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExcelGridLayout.app/ExcelGridLayout";
+				PRODUCT_NAME = SpreadsheetLayout;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpreadsheetLayout.app/SpreadsheetLayout";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8259A7D91A3ED3A00027F925 /* Build configuration list for PBXProject "ExcelGridLayout" */ = {
+		8259A7D91A3ED3A00027F925 /* Build configuration list for PBXProject "SpreadsheetLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8259A7FB1A3ED3A10027F925 /* Debug */,
@@ -454,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8259A7FD1A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "ExcelGridLayout" */ = {
+		8259A7FD1A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "SpreadsheetLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8259A7FE1A3ED3A10027F925 /* Debug */,
@@ -463,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8259A8001A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "ExcelGridLayoutTests" */ = {
+		8259A8001A3ED3A10027F925 /* Build configuration list for PBXNativeTarget "SpreadsheetLayoutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8259A8011A3ED3A10027F925 /* Debug */,

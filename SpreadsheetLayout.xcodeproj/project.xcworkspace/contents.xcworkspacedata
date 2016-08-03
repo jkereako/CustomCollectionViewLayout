@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/jkereakoglow/src/swift/CustomCollectionViewLayout/ExcelGridLayout.xcodeproj">
+      location = "self:/Users/jkereakoglow/src/swift/ExcelGridLayout/SpreadsheetLayout.xcodeproj">
    </FileRef>
 </Workspace>

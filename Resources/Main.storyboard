@@ -28,7 +28,7 @@
         <!--Collection View Controller-->
         <scene sceneID="mya-qk-gbb">
             <objects>
-                <viewController id="XOK-Vw-JKM" customClass="CollectionViewController" customModule="ExcelGridLayout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XOK-Vw-JKM" customClass="CollectionViewController" customModule="SpreadsheetLayout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K0o-8d-PxM"/>
                         <viewControllerLayoutGuide type="bottom" id="nfU-xL-QKb"/>
@@ -40,7 +40,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gcl-oe-Yfd">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewLayout key="collectionViewLayout" id="M2g-v1-v1v" customClass="ExcelGridLayout" customModule="ExcelGridLayout" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="M2g-v1-v1v" customClass="SpreadsheetLayout" customModule="SpreadsheetLayout" customModuleProvider="target"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XOK-Vw-JKM" id="rYq-wv-8W0"/>
                                     <outlet property="delegate" destination="XOK-Vw-JKM" id="RXP-lF-DWf"/>

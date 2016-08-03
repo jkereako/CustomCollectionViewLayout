@@ -1,15 +1,15 @@
 //
-//  CustomCollectionViewLayout.swift
-//  CustomCollectionLayout
+//  SpreadsheetLayout.swift
+//  SpreadsheetLayout
 //
-//  Created by JOSE MARTINEZ on 15/12/2014.
+//  Created by Jose Martinez on 12/15/2014.
 //  Copyright (c) 2014 brightec. All rights reserved.
 //
 
 import UIKit
 
-final class ExcelGridLayout: UICollectionViewLayout {
-  weak var delegate: ExcelGridLayoutDelegate!
+final class SpreadsheetLayout: UICollectionViewLayout {
+  weak var delegate: SpreadsheetLayoutDelegate!
   
   private var layoutAttributesCache: [UICollectionViewLayoutAttributes]!
   private var layoutAttributesInRectCache = CGRectZero

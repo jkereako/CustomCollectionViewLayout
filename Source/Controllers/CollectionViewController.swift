@@ -29,7 +29,7 @@ final class CollectionViewController: UIViewController, UICollectionViewDataSour
     dateSizingCell = dateNib.instantiateWithOwner(nil, options: nil).first as! DateCollectionViewCell
     contentSizingCell = contentNib.instantiateWithOwner(nil, options: nil).first as! ContentCollectionViewCell
     
-    let layout = collectionView.collectionViewLayout as! ExcelGridLayout
+    let layout = collectionView.collectionViewLayout as! SpreadsheetLayout
     layout.delegate = self
   }
   
@@ -118,7 +118,7 @@ final class CollectionViewController: UIViewController, UICollectionViewDataSour
   }
 }
 
-extension CollectionViewController: ExcelGridLayoutDelegate {
+extension CollectionViewController: SpreadsheetLayoutDelegate {
   func width(forColumn column: UInt, collectionView: UICollectionView) -> CGFloat {
     return dateSizingCell.frame.width
   }
