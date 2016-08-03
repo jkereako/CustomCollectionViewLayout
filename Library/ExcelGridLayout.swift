@@ -14,14 +14,21 @@ final class ExcelGridLayout: UICollectionViewLayout {
   private var layoutAttributesCache: [UICollectionViewLayoutAttributes]!
   private var layoutAttributesInRectCache = CGRectZero
   private var contentSizeCache = CGSizeZero
+  private var columnCount = 0
+  private var rowCount = 0
+  
+  override func prepareLayout() {
+    super.prepareLayout()
+    
+    columnCount = collectionView!.numberOfItemsInSection(0)
+    rowCount = collectionView!.numberOfSections()
+  }
   
   override func collectionViewContentSize() -> CGSize {
     guard CGSizeEqualToSize(contentSizeCache, CGSizeZero) else {
       return contentSizeCache
     }
     
-    let columnCount = collectionView!.numberOfItemsInSection(0)
-    let rowCount = collectionView!.numberOfSections()
     var contentSize = CGSizeZero
     
     for column in 0..<columnCount {
@@ -54,30 +61,31 @@ final class ExcelGridLayout: UICollectionViewLayout {
       )
     )
     
-    attributes.zIndex = 0
+    var frame = attributes.frame
     
-    // Set this value for the first item (Sec0Row0) in order to make it visible over first column
-    // and first row
-    if indexPath.section == 0 && indexPath.row == 0 {
+    switch (indexPath.section, indexPath.row) {
+    
+    // Top-left tem
+    case (0, 0):
       attributes.zIndex = 2
-    }
-      
-      // Set this value for the first row or section in order to set visible over the rest of the items
-    else if indexPath.section == 0 || indexPath.row == 0 {
-      attributes.zIndex = 1
-    }
-    
-    if indexPath.section == 0 {
-      var frame = attributes.frame
       frame.origin.y = collectionView!.contentOffset.y
-      attributes.frame = frame
+      frame.origin.x = collectionView!.contentOffset.x
+    
+    // Top row
+    case (0, _):
+      attributes.zIndex = 1
+      frame.origin.y = collectionView!.contentOffset.y
+    
+    // Left column
+    case (_, 0):
+      attributes.zIndex = 1
+      frame.origin.x = collectionView!.contentOffset.x
+      
+    default:
+      attributes.zIndex = 0
     }
     
-    if indexPath.row == 0 {
-      var frame = attributes.frame
-      frame.origin.x = collectionView!.contentOffset.x
-      attributes.frame = frame
-    }
+    attributes.frame = frame
     
     return attributes
   }
@@ -91,12 +99,10 @@ final class ExcelGridLayout: UICollectionViewLayout {
     
     var attributes = Set<UICollectionViewLayoutAttributes>()
     
-    for section in 0..<collectionView!.numberOfSections() {
-      let itemCount = collectionView!.numberOfItemsInSection(section)
-      
-      for index in 0..<itemCount {
+    for row in 0..<rowCount {
+      for column in 0..<columnCount {
         let attribute = layoutAttributesForItemAtIndexPath(
-          NSIndexPath(forItem: index, inSection: section)
+          NSIndexPath(forItem: column, inSection: row)
           )!
         
         attributes.insert(attribute)
