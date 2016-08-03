@@ -64,7 +64,6 @@ final class SpreadsheetLayout: UICollectionViewLayout {
     var frame = attributes.frame
     
     switch (indexPath.section, indexPath.row) {
-    
     // Top-left tem
     case (0, 0):
       attributes.zIndex = 2

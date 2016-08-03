@@ -9,25 +9,22 @@
 import UIKit
 
 final class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-  private var dateSizingCell: DateCollectionViewCell!
-  private var contentSizingCell: ContentCollectionViewCell!
-  
-  let dateCellIdentifier = "DateCellIdentifier"
-  let contentCellIdentifier = "ContentCellIdentifier"
+  private var columnHeaderSizingCell: UICollectionViewCell!
+  private var rowContentSizingCell: UICollectionViewCell!
   
   @IBOutlet weak var collectionView: UICollectionView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let dateNib = UINib(nibName: "DateCollectionViewCell", bundle: nil)
-    let contentNib = UINib(nibName: "ContentCollectionViewCell", bundle: nil)
+    let rowContentNib = UINib(nibName: "RowContentCell", bundle: nil)
+    let columnHeaderNib = UINib(nibName: "ColumnHeaderCell", bundle: nil)
     
-    collectionView.registerNib(dateNib, forCellWithReuseIdentifier: dateCellIdentifier)
-    collectionView.registerNib(contentNib, forCellWithReuseIdentifier: contentCellIdentifier)
+    collectionView.registerNib(rowContentNib, forCellWithReuseIdentifier: "rowContent")
+    collectionView.registerNib(columnHeaderNib, forCellWithReuseIdentifier: "columnHeader")
     
-    dateSizingCell = dateNib.instantiateWithOwner(nil, options: nil).first as! DateCollectionViewCell
-    contentSizingCell = contentNib.instantiateWithOwner(nil, options: nil).first as! ContentCollectionViewCell
+    rowContentSizingCell = rowContentNib.instantiateWithOwner(nil, options: nil).first as! UICollectionViewCell
+    columnHeaderSizingCell = columnHeaderNib.instantiateWithOwner(nil, options: nil).first  as! UICollectionViewCell
     
     let layout = collectionView.collectionViewLayout as! SpreadsheetLayout
     layout.delegate = self
@@ -46,89 +43,37 @@ final class CollectionViewController: UIViewController, UICollectionViewDataSour
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
-    if indexPath.section == 0 {
-      if indexPath.row == 0 {
-        let dateCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-          dateCellIdentifier, forIndexPath: indexPath) as! DateCollectionViewCell
-        
-        dateCell.backgroundColor = UIColor.whiteColor()
-        dateCell.dateLabel.font = UIFont.systemFontOfSize(13)
-        dateCell.dateLabel.textColor = UIColor.blackColor()
-        dateCell.dateLabel.text = "Date"
-        
-        return dateCell
-      }
-        
-      else {
-        let contentCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-          contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-        
-        contentCell.contentLabel.font = UIFont.systemFontOfSize(13)
-        contentCell.contentLabel.textColor = UIColor.blackColor()
-        contentCell.contentLabel.text = "Column \(indexPath.row)"
-        
-        if indexPath.section % 2 != 0 {
-          contentCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
-        } else {
-          contentCell.backgroundColor = UIColor.whiteColor()
-        }
-        
-        return contentCell
-      }
-    }
+    
+    switch (column: indexPath.row, row: indexPath.section) {
+    case (_, 0):
+      return collectionView.dequeueReusableCellWithReuseIdentifier(
+        "columnHeader", forIndexPath: indexPath
+      )
       
-    else {
-      if indexPath.row == 0 {
-        let dateCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-          dateCellIdentifier, forIndexPath: indexPath) as! DateCollectionViewCell
-        
-        dateCell.dateLabel.font = UIFont.systemFontOfSize(13)
-        dateCell.dateLabel.textColor = UIColor.blackColor()
-        dateCell.dateLabel.text = String(indexPath.section)
-        if indexPath.section % 2 != 0 {
-          dateCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
-        }
-          
-        else {
-          dateCell.backgroundColor = UIColor.whiteColor()
-        }
-        
-        return dateCell
-      }
-        
-      else {
-        let contentCell = collectionView.dequeueReusableCellWithReuseIdentifier(
-          contentCellIdentifier, forIndexPath: indexPath) as! ContentCollectionViewCell
-        
-        contentCell.contentLabel.font = UIFont.systemFontOfSize(13)
-        contentCell.contentLabel.textColor = UIColor.blackColor()
-        contentCell.contentLabel.text = "Content"
-        
-        if indexPath.section % 2 != 0 {
-          contentCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
-        }
-          
-        else {
-          contentCell.backgroundColor = UIColor.whiteColor()
-        }
-        
-        return contentCell
-      }
+    case (0, _):
+      return collectionView.dequeueReusableCellWithReuseIdentifier(
+        "columnHeader", forIndexPath: indexPath
+      )
+
+    default:
+      return collectionView.dequeueReusableCellWithReuseIdentifier(
+        "rowContent", forIndexPath: indexPath
+      )
     }
   }
 }
 
 extension CollectionViewController: SpreadsheetLayoutDelegate {
   func width(forColumn column: UInt, collectionView: UICollectionView) -> CGFloat {
-    return dateSizingCell.frame.width
+    return columnHeaderSizingCell.frame.width
   }
   
   func height(forRow row: UInt, collectionView: UICollectionView) -> CGFloat {
     switch row {
     case 0:
-      return dateSizingCell.frame.height
+      return columnHeaderSizingCell.frame.height
     default:
-      return contentSizingCell.frame.height
+      return rowContentSizingCell.frame.height
     }
   }
 }
