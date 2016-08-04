@@ -15,6 +15,6 @@ Additionally, I added some caching behavior to reduce calculation time.
 I also created a delegate for the SpreadsheetLayout. The delegate simply asks
 for the column size and row height.
 
-![alt tag](https://github.com/brightec/CustomCollectionViewLayout/blob/master/customCollectionLayoutDemo.gif)
+<img src="https://raw.githubusercontent.com/jkereako/SpreadsheetLayout/master/Images/screen.png" alt="KENO" width="320" height="568" />
 
 [fork]: https://github.com/brightec/CustomCollectionViewLayout
