@@ -14,30 +14,32 @@ final class SpreadsheetLayout: UICollectionViewLayout {
   private var layoutAttributesCache: [UICollectionViewLayoutAttributes]!
   private var layoutAttributesInRectCache = CGRectZero
   private var contentSizeCache = CGSizeZero
-  private var columnCount = 0
-  private var rowCount = 0
-  private var contentOffset = CGPointZero
+  private var columnCountCache = 0
+  private var rowCountCache = 0
   
-  override func prepareLayout() {
-    super.prepareLayout()
-    
-    columnCount = collectionView!.numberOfItemsInSection(0)
-    rowCount = collectionView!.numberOfSections()
-  }
+  // Saves the starting offset of the collection view. This offset will be applied to the rect of
+  // each cell to find the true origin. For example, this project contains a navigation bar which 
+  // has a height of 64 points. This means that the true origin of the collection view is 
+  // `CGPoint(x: 0, y: -64)`.
+  private var originalContentOffset = CGPointZero
   
   override func collectionViewContentSize() -> CGSize {
     guard CGSizeEqualToSize(contentSizeCache, CGSizeZero) else {
       return contentSizeCache
     }
     
-    contentOffset = collectionView!.contentOffset
-    var contentSize = CGSize(width: contentOffset.x, height: contentOffset.y)
+    // Query the collection view's offset here. This method is executed exactly once.
+    originalContentOffset = collectionView!.contentOffset
+    columnCountCache = collectionView!.numberOfItemsInSection(0)
+    rowCountCache = collectionView!.numberOfSections()
     
-    for column in 0..<columnCount {
+    var contentSize = CGSize(width: originalContentOffset.x, height: originalContentOffset.y)
+    
+    for column in 0..<columnCountCache {
       contentSize.width += delegate.width(forColumn: UInt(column), collectionView: collectionView!)
     }
     
-    for row in 0..<rowCount {
+    for row in 0..<rowCountCache {
       contentSize.height += delegate.height(forRow: UInt(row), collectionView: collectionView!)
     }
     
@@ -56,8 +58,8 @@ final class SpreadsheetLayout: UICollectionViewLayout {
 
     var frame = CGRectIntegral(
       CGRect(
-        x: (itemSize.width * CGFloat(indexPath.row)) + contentOffset.x,
-        y: (itemSize.height * CGFloat(indexPath.section)) + contentOffset.y,
+        x: (itemSize.width * CGFloat(indexPath.row)) + originalContentOffset.x,
+        y: (itemSize.height * CGFloat(indexPath.section)) + originalContentOffset.y,
         width: itemSize.width,
         height: itemSize.height
       )
@@ -98,8 +100,8 @@ final class SpreadsheetLayout: UICollectionViewLayout {
     
     var attributes = Set<UICollectionViewLayoutAttributes>()
 
-    for column in 0..<columnCount {
-      for row in 0..<rowCount {
+    for column in 0..<columnCountCache {
+      for row in 0..<rowCountCache {
         let attribute = layoutAttributesForItemAtIndexPath(
           NSIndexPath(forItem: column, inSection: row)
           )!
