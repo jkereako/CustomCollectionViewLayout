@@ -33,27 +33,45 @@ final class CollectionViewController: UIViewController, UICollectionViewDataSour
   // MARK - UICollectionViewDataSource
   // i.e. number of rows
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-    return 50
+    return 10
   }
   
   // i.e. number of columns
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 8
+    return 5
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
     
     switch (column: indexPath.row, row: indexPath.section) {
-    case (_, 0):
-      return collectionView.dequeueReusableCellWithReuseIdentifier(
+    case (0, 0):
+      let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
         "columnHeader", forIndexPath: indexPath
-      )
+      ) as! ColumnHeaderCell
+      
+      cell.backgroundColor = UIColor.grayColor()
+      cell.title.text = "ROW \(indexPath.section)"
+      
+      return cell
+      
+    case (_, 0):
+      let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
+        "columnHeader", forIndexPath: indexPath
+        ) as! ColumnHeaderCell
+      
+      cell.title.text = "COL \(indexPath.row)"
+      
+      return cell
       
     case (0, _):
-      return collectionView.dequeueReusableCellWithReuseIdentifier(
+      let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
         "columnHeader", forIndexPath: indexPath
-      )
+        ) as! ColumnHeaderCell
+      
+      cell.title.text = "ROW \(indexPath.section)"
+      
+      return cell
 
     default:
       return collectionView.dequeueReusableCellWithReuseIdentifier(

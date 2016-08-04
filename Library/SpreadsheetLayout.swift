@@ -16,6 +16,7 @@ final class SpreadsheetLayout: UICollectionViewLayout {
   private var contentSizeCache = CGSizeZero
   private var columnCount = 0
   private var rowCount = 0
+  private var contentOffset = CGPointZero
   
   override func prepareLayout() {
     super.prepareLayout()
@@ -29,7 +30,8 @@ final class SpreadsheetLayout: UICollectionViewLayout {
       return contentSizeCache
     }
     
-    var contentSize = CGSizeZero
+    contentOffset = collectionView!.contentOffset
+    var contentSize = CGSize(width: contentOffset.x, height: contentOffset.y)
     
     for column in 0..<columnCount {
       contentSize.width += delegate.width(forColumn: UInt(column), collectionView: collectionView!)
@@ -51,17 +53,15 @@ final class SpreadsheetLayout: UICollectionViewLayout {
     )
     
     let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-    
-    attributes.frame = CGRectIntegral(
+
+    var frame = CGRectIntegral(
       CGRect(
-        x: itemSize.width * CGFloat(indexPath.row),
-        y: itemSize.height * CGFloat(indexPath.section),
+        x: (itemSize.width * CGFloat(indexPath.row)) + contentOffset.x,
+        y: (itemSize.height * CGFloat(indexPath.section)) + contentOffset.y,
         width: itemSize.width,
         height: itemSize.height
       )
     )
-    
-    var frame = attributes.frame
     
     switch (indexPath.section, indexPath.row) {
     // Top-left tem
@@ -69,12 +69,12 @@ final class SpreadsheetLayout: UICollectionViewLayout {
       attributes.zIndex = 2
       frame.origin.y = collectionView!.contentOffset.y
       frame.origin.x = collectionView!.contentOffset.x
-    
+      
     // Top row
     case (0, _):
       attributes.zIndex = 1
       frame.origin.y = collectionView!.contentOffset.y
-    
+      
     // Left column
     case (_, 0):
       attributes.zIndex = 1
@@ -97,9 +97,9 @@ final class SpreadsheetLayout: UICollectionViewLayout {
     layoutAttributesInRectCache = rect
     
     var attributes = Set<UICollectionViewLayoutAttributes>()
-    
-    for row in 0..<rowCount {
-      for column in 0..<columnCount {
+
+    for column in 0..<columnCount {
+      for row in 0..<rowCount {
         let attribute = layoutAttributesForItemAtIndexPath(
           NSIndexPath(forItem: column, inSection: row)
           )!
