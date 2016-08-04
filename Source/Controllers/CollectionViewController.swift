@@ -48,7 +48,7 @@ final class CollectionViewController: UIViewController, UICollectionViewDataSour
     case (0, 0):
       let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
         "columnHeader", forIndexPath: indexPath
-      ) as! ColumnHeaderCell
+        ) as! ColumnHeaderCell
       
       cell.backgroundColor = UIColor.grayColor()
       cell.title.text = "ROW \(indexPath.section)"
@@ -72,11 +72,17 @@ final class CollectionViewController: UIViewController, UICollectionViewDataSour
       cell.title.text = "ROW \(indexPath.section)"
       
       return cell
-
+      
+      //
+      
     default:
-      return collectionView.dequeueReusableCellWithReuseIdentifier(
+      let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
         "rowContent", forIndexPath: indexPath
-      )
+        ) as! RowContentCell
+      
+      cell.title.text = String(arc4random_uniform(100))
+      
+      return cell
     }
   }
 }
