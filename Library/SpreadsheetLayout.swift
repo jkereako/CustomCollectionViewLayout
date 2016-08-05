@@ -35,6 +35,7 @@ final class SpreadsheetLayout: UICollectionViewLayout {
     
     var contentSize = CGSize(width: originalContentOffset.x, height: originalContentOffset.y)
     
+    // Calculate the content size by querying the delegate. Perform this function only once.
     for column in 0..<columnCountCache {
       contentSize.width += delegate.width(forColumn: UInt(column), collectionView: collectionView!)
     }
@@ -55,16 +56,18 @@ final class SpreadsheetLayout: UICollectionViewLayout {
     )
     
     let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-
-    var frame = CGRectIntegral(
-      CGRect(
-        x: (itemSize.width * CGFloat(indexPath.row)) + originalContentOffset.x,
-        y: (itemSize.height * CGFloat(indexPath.section)) + originalContentOffset.y,
-        width: itemSize.width,
-        height: itemSize.height
-      )
+    
+    // Calculate the rect of the cell making sure to incorporate the off set of the collection
+    // view's content.
+    var frame = CGRect(
+      x: (itemSize.width * CGFloat(indexPath.row)) + originalContentOffset.x,
+      y: (itemSize.height * CGFloat(indexPath.section)) + originalContentOffset.y,
+      width: itemSize.width,
+      height: itemSize.height
     )
     
+    // Creates a tuple type out of an index path. This is a prime example of pattern matching.
+    // see: https://en.wikipedia.org/wiki/Pattern_matching
     switch (indexPath.section, indexPath.row) {
     // Top-left tem
     case (0, 0):
@@ -86,7 +89,9 @@ final class SpreadsheetLayout: UICollectionViewLayout {
       attributes.zIndex = 0
     }
     
-    attributes.frame = frame
+    // For more information on what `CGRectIntegral` does and why we should use it, go here:
+    // http://iosdevelopertip.blogspot.in/2014/10/cgrectintegral.html
+    attributes.frame = CGRectIntegral(frame)
     
     return attributes
   }
