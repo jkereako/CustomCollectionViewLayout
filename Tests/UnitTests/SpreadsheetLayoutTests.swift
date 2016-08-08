@@ -9,27 +9,48 @@
 import XCTest
 @testable import SpreadsheetLayout
 
-class SpreadsheetLayoutTests: XCTestCase {
+final class SpreadsheetLayoutTests: XCTestCase {
+  private enum Identifier: String {
+    case Storyboard = "Main"
+    case ViewController = "spreadsheet"
+  }
+  
+  private var storyboard: UIStoryboard!
+  private var sut: SpreadsheetViewController!
   
   override func setUp() {
     super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    storyboard = UIStoryboard(name: Identifier.Storyboard.rawValue, bundle: NSBundle.mainBundle())
+    sut = storyboard.instantiateViewControllerWithIdentifier(Identifier.ViewController.rawValue) as!
+    SpreadsheetViewController
+    
+    // This line gurantees that the initial view controller is the SpreadsheetViewController
+    UIApplication.sharedApplication().keyWindow!.rootViewController = sut
   }
   
   override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    storyboard = nil
+    sut = nil
+    UIApplication.sharedApplication().keyWindow!.rootViewController = nil
+    
     super.tearDown()
   }
   
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+  func testStoryboardIsNotNil() {
+    XCTAssertNotNil(
+      UIStoryboard(name: Identifier.Storyboard.rawValue, bundle: NSBundle.mainBundle())
+    )
   }
   
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measureBlock {
-      // Put the code you want to measure the time of here.
-    }
-  }
-}
+  func testViewControllerIsNotNil() {
+    let storyboard = UIStoryboard(
+      name: Identifier.Storyboard.rawValue, bundle: NSBundle.mainBundle()
+    )
+    
+    let viewController = storyboard.instantiateViewControllerWithIdentifier(
+      Identifier.ViewController.rawValue
+      ) as! SpreadsheetViewController
+    
+    XCTAssertNotNil(viewController)
+  }}

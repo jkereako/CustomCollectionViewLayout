@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="HEP-BD-nXh">
             <objects>
-                <navigationController id="1tW-NO-eFh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1tW-NO-eFh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N5l-fi-VYc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="396" y="541"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Spreadsheet View Controller-->
         <scene sceneID="mya-qk-gbb">
             <objects>
-                <viewController id="XOK-Vw-JKM" customClass="CollectionViewController" customModule="SpreadsheetLayout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="spreadsheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XOK-Vw-JKM" customClass="SpreadsheetViewController" customModule="SpreadsheetLayout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K0o-8d-PxM"/>
                         <viewControllerLayoutGuide type="bottom" id="nfU-xL-QKb"/>

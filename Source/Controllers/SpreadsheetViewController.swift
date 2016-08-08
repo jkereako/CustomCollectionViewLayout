@@ -1,6 +1,6 @@
 //
-//  CollectionViewController.swift
-//  CustomCollectionLayout
+//  SpreadsheetViewController.swift
+//  SpreadsheetLayout
 //
 //  Created by JOSE MARTINEZ on 15/12/2014.
 //  Copyright (c) 2014 brightec. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+final class SpreadsheetViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
   private var columnHeaderSizingCell: UICollectionViewCell!
   private var rowContentSizingCell: UICollectionViewCell!
   
@@ -87,7 +87,7 @@ final class CollectionViewController: UIViewController, UICollectionViewDataSour
   }
 }
 
-extension CollectionViewController: SpreadsheetLayoutDelegate {
+extension SpreadsheetViewController: SpreadsheetLayoutDelegate {
   func width(forColumn column: UInt, collectionView: UICollectionView) -> CGFloat {
     return columnHeaderSizingCell.frame.width
   }

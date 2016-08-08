@@ -14,7 +14,7 @@
 		36E2CCC21D47F1F800DFCACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E2CCC11D47F1F800DFCACA /* Main.storyboard */; };
 		36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */; };
 		8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E31A3ED3A00027F925 /* AppDelegate.swift */; };
-		8259A7E61A3ED3A00027F925 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */; };
+		8259A7E61A3ED3A00027F925 /* SpreadsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */; };
 		8259A7EB1A3ED3A00027F925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EA1A3ED3A00027F925 /* Images.xcassets */; };
 		8259A7EE1A3ED3A10027F925 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */; };
 		8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */; };
@@ -43,7 +43,7 @@
 		8259A7DE1A3ED3A00027F925 /* SpreadsheetLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpreadsheetLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8259A7E21A3ED3A00027F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8259A7E31A3ED3A00027F925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewController.swift; sourceTree = "<group>"; };
 		8259A7EA1A3ED3A00027F925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8259A7ED1A3ED3A10027F925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayout.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		8259A80E1A3ED5480027F925 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8259A7E51A3ED3A00027F925 /* CollectionViewController.swift */,
+				8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */,
-				8259A7E61A3ED3A00027F925 /* CollectionViewController.swift in Sources */,
+				8259A7E61A3ED3A00027F925 /* SpreadsheetViewController.swift in Sources */,
 				36D308B61D53D0830058B523 /* RowContentCell.swift in Sources */,
 				8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */,
 				8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */,
