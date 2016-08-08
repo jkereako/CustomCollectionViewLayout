@@ -71,11 +71,10 @@
 		361AFA3D1D58C4A500D72803 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				361AFA3E1D58C4A500D72803 /* SpreadsheetLayoutTests.swift */,
 				361AFA401D58C4A500D72803 /* Info.plist */,
+				361AFA3E1D58C4A500D72803 /* SpreadsheetLayoutTests.swift */,
 			);
-			name = UnitTests;
-			path = ../SpreadsheetLayoutTests;
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 		36D308B71D53D6860058B523 /* Views */ = {
@@ -313,7 +312,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = SpreadsheetLayoutTests/Info.plist;
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayoutTests;
@@ -329,7 +328,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = SpreadsheetLayoutTests/Info.plist;
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayoutTests;
@@ -500,6 +499,7 @@
 				361AFA451D58C4A500D72803 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8259A7D91A3ED3A00027F925 /* Build configuration list for PBXProject "SpreadsheetLayout" */ = {
 			isa = XCConfigurationList;
