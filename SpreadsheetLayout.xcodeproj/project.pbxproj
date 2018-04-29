@@ -471,6 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SpreadsheetLayout;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -486,6 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SpreadsheetLayout;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
