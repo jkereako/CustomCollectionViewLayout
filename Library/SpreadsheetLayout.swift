@@ -37,11 +37,15 @@ final class SpreadsheetLayout: UICollectionViewLayout {
         
         // Calculate the content size by querying the delegate. Perform this function only once.
         for column in 0..<columnCountCache {
-            contentSize.width += delegate.width(forColumn: UInt(column), collectionView: collectionView!)
+            contentSize.width += delegate.width(
+                forColumn: column, collectionView: collectionView!
+            )
         }
         
         for row in 0..<rowCountCache {
-            contentSize.height += delegate.height(forRow: UInt(row), collectionView: collectionView!)
+            contentSize.height += delegate.height(
+                forRow: row, collectionView: collectionView!
+            )
         }
         
         contentSizeCache = contentSize
@@ -51,8 +55,12 @@ final class SpreadsheetLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let itemSize = CGSize(
-            width: delegate.width(forColumn: UInt(indexPath.row), collectionView: collectionView!),
-            height: delegate.height(forRow: UInt(indexPath.section), collectionView: collectionView!)
+            width: delegate.width(
+                forColumn: indexPath.row, collectionView: collectionView!
+            ),
+            height: delegate.height(
+                forRow: indexPath.section, collectionView: collectionView!
+            )
         )
         
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)

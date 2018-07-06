@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360891621D527B3C00012863 /* ColumnHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 360891611D527B3C00012863 /* ColumnHeaderCell.xib */; };
+		360891621D527B3C00012863 /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */; };
 		361AFA3F1D58C4A500D72803 /* SpreadsheetLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361AFA3E1D58C4A500D72803 /* SpreadsheetLayoutTests.swift */; };
-		36D308B41D53D0310058B523 /* ColumnHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D308B31D53D0310058B523 /* ColumnHeaderCell.swift */; };
-		36D308B61D53D0830058B523 /* RowContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D308B51D53D0830058B523 /* RowContentCell.swift */; };
+		365E160120EFEED70047814F /* SpreadsheetCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E160020EFEED70047814F /* SpreadsheetCollectionViewDataSource.swift */; };
+		365E160320EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E160220EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift */; };
+		365E160620EFF0F00047814F /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E160520EFF0F00047814F /* TextCollectionViewCell.swift */; };
+		365E160820EFF2E00047814F /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E160720EFF2E00047814F /* UICollectionView.swift */; };
 		36E2CCC21D47F1F800DFCACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E2CCC11D47F1F800DFCACA /* Main.storyboard */; };
 		36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */; };
 		8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E31A3ED3A00027F925 /* AppDelegate.swift */; };
@@ -18,7 +20,7 @@
 		8259A7EB1A3ED3A00027F925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EA1A3ED3A00027F925 /* Images.xcassets */; };
 		8259A7EE1A3ED3A10027F925 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */; };
 		8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */; };
-		827A971F1A603E600055CFA1 /* RowContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827A971D1A603E600055CFA1 /* RowContentCell.xib */; };
+		827A971F1A603E600055CFA1 /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		360891611D527B3C00012863 /* ColumnHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColumnHeaderCell.xib; sourceTree = "<group>"; };
+		360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		361AFA3C1D58C4A500D72803 /* SpreadsheetLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpreadsheetLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		361AFA3E1D58C4A500D72803 /* SpreadsheetLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayoutTests.swift; sourceTree = "<group>"; };
 		361AFA401D58C4A500D72803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36D308B31D53D0310058B523 /* ColumnHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnHeaderCell.swift; sourceTree = "<group>"; };
-		36D308B51D53D0830058B523 /* RowContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowContentCell.swift; sourceTree = "<group>"; };
+		365E160020EFEED70047814F /* SpreadsheetCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		365E160220EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetCollectionViewCellReuseIdentifier.swift; sourceTree = "<group>"; };
+		365E160520EFF0F00047814F /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
+		365E160720EFF2E00047814F /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		36E2CCC11D47F1F800DFCACA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayoutDelegate.swift; sourceTree = "<group>"; };
 		8259A7DE1A3ED3A00027F925 /* SpreadsheetLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpreadsheetLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +51,7 @@
 		8259A7EA1A3ED3A00027F925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8259A7ED1A3ED3A10027F925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayout.swift; sourceTree = "<group>"; };
-		827A971D1A603E600055CFA1 /* RowContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RowContentCell.xib; sourceTree = "<group>"; };
+		827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,23 +81,31 @@
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		36D308B71D53D6860058B523 /* Views */ = {
+		365E160420EFF01B0047814F /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				36D308B31D53D0310058B523 /* ColumnHeaderCell.swift */,
-				36D308B51D53D0830058B523 /* RowContentCell.swift */,
+				365E160220EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift */,
+				365E160520EFF0F00047814F /* TextCollectionViewCell.swift */,
+				360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */,
+				827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */,
 			);
-			path = Views;
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		365E160920EFF3340047814F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				365E160720EFF2E00047814F /* UICollectionView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		36E2CCBD1D47E8FB00DFCACA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				360891611D527B3C00012863 /* ColumnHeaderCell.xib */,
 				8259A7EA1A3ED3A00027F925 /* Images.xcassets */,
 				8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */,
 				36E2CCC11D47F1F800DFCACA /* Main.storyboard */,
-				827A971D1A603E600055CFA1 /* RowContentCell.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -131,8 +143,8 @@
 		8259A7E01A3ED3A00027F925 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				8259A80E1A3ED5480027F925 /* Controllers */,
-				36D308B71D53D6860058B523 /* Views */,
+				365E160920EFF3340047814F /* Extensions */,
+				8259A80E1A3ED5480027F925 /* ViewControllers */,
 				8259A7E31A3ED3A00027F925 /* AppDelegate.swift */,
 			);
 			path = Source;
@@ -154,12 +166,14 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		8259A80E1A3ED5480027F925 /* Controllers */ = {
+		8259A80E1A3ED5480027F925 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				365E160420EFF01B0047814F /* CollectionViewCells */,
 				8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */,
+				365E160020EFEED70047814F /* SpreadsheetCollectionViewDataSource.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,10 +220,11 @@
 		8259A7D61A3ED3A00027F925 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AD;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = brightec;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = AlexisDigital;
 				TargetAttributes = {
 					361AFA3B1D58C4A500D72803 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -221,7 +236,7 @@
 				};
 			};
 			buildConfigurationList = 8259A7D91A3ED3A00027F925 /* Build configuration list for PBXProject "SpreadsheetLayout" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -252,9 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8259A7EE1A3ED3A10027F925 /* LaunchScreen.xib in Resources */,
-				360891621D527B3C00012863 /* ColumnHeaderCell.xib in Resources */,
+				360891621D527B3C00012863 /* HeaderCollectionViewCell.xib in Resources */,
 				36E2CCC21D47F1F800DFCACA /* Main.storyboard in Resources */,
-				827A971F1A603E600055CFA1 /* RowContentCell.xib in Resources */,
+				827A971F1A603E600055CFA1 /* ContentCollectionViewCell.xib in Resources */,
 				8259A7EB1A3ED3A00027F925 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +290,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */,
+				365E160120EFEED70047814F /* SpreadsheetCollectionViewDataSource.swift in Sources */,
 				8259A7E61A3ED3A00027F925 /* SpreadsheetViewController.swift in Sources */,
-				36D308B61D53D0830058B523 /* RowContentCell.swift in Sources */,
+				365E160320EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift in Sources */,
 				8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */,
 				8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */,
-				36D308B41D53D0310058B523 /* ColumnHeaderCell.swift in Sources */,
+				365E160820EFF2E00047814F /* UICollectionView.swift in Sources */,
+				365E160620EFF0F00047814F /* TextCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +331,11 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayoutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpreadsheetLayout.app/SpreadsheetLayout";
@@ -330,7 +351,11 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayoutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpreadsheetLayout.app/SpreadsheetLayout";
@@ -349,17 +374,25 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -368,6 +401,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -414,17 +448,25 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -432,6 +474,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -455,6 +498,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -466,9 +510,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SupportFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayout;
 				PRODUCT_NAME = SpreadsheetLayout;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.0;
@@ -482,9 +529,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SupportFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.uk.brightec.$(PRODUCT_NAME:rfc1034identifier)";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayout;
 				PRODUCT_NAME = SpreadsheetLayout;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.0;
