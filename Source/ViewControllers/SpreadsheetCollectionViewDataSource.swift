@@ -31,7 +31,7 @@ extension SpreadsheetCollectionViewDataSource: UICollectionViewDataSource {
         // Origin
         case (0, 0):
             identifier = .header
-            text = "ROW \(indexPath.section)"
+            text = ""
 
         // Top row
         case (_, 0):

@@ -8,15 +8,13 @@
 
 import UIKit
 
-final class SpreadsheetViewController: UIViewController {
+final class SpreadsheetViewController: UICollectionViewController {
     private var dataSource = SpreadsheetCollectionViewDataSource()
-    
-    @IBOutlet private weak var collectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let layout = collectionView.collectionViewLayout as? SpreadsheetLayout else {
+        guard let layout = collectionView?.collectionViewLayout as? SpreadsheetLayout else {
             assertionFailure("Expected a SpreadsheetLayout")
             return
         }

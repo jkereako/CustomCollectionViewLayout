@@ -6,8 +6,6 @@
 //  Copyright © 2016 brightec. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 protocol SpreadsheetLayoutDelegate: UICollectionViewDelegate {
