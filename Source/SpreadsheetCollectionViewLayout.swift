@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class SpreadsheetLayout: UICollectionViewLayout {
-    weak var delegate: SpreadsheetLayoutDelegate!
+final class SpreadsheetCollectionViewLayout: UICollectionViewLayout {
+    weak var delegate: SpreadsheetCollectionViewLayoutDelegate!
     
     private var layoutAttributesCache: [UICollectionViewLayoutAttributes]!
     private var layoutAttributesInRectCache = CGRect.zero

@@ -8,55 +8,62 @@
 
 import UIKit
 
-final class SpreadsheetCollectionViewModel: NSObject {}
+protocol SpreadsheetCollectionViewModelDataSource: class {
+    func cellReuseIdentifier(for indexPath: IndexPath) -> String
+    func configure(_ cell: UICollectionViewCell, with content: String)
+}
+
+final class SpreadsheetCollectionViewModel: NSObject {
+    weak var dataSource: SpreadsheetCollectionViewModelDataSource?
+
+    private var theDataSource: [[String]]
+
+    override init() {
+        theDataSource = [[String]]()
+
+        for i in 0..<5 {
+            var content = [String]()
+
+            content.append("Col \(i)")
+
+            for i in 0..<10 {
+                var row = "\(i)"
+
+                if i == 0 {
+                    row = "Row \(i)"
+
+                }
+
+                content.append(row)
+            }
+
+            theDataSource.append(content)
+        }
+
+        super.init()
+    }
+}
 
 // MARK: - UICollectionViewDataSource
 extension SpreadsheetCollectionViewModel: UICollectionViewDataSource {
     // i.e. rows
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        return theDataSource.count > 0 ? theDataSource[0].count : 0
     }
 
     // i.e. number of columns
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return theDataSource.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        var identifier: SpreadsheetCollectionViewCellReuseIdentifier
-        var text: String
+        let identifier = dataSource?.cellReuseIdentifier(for: indexPath) ?? ""
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: identifier, for: indexPath
+        )
 
-        switch (column: indexPath.row, row: indexPath.section) {
-        // Origin
-        case (0, 0):
-            identifier = .header
-            text = ""
-
-        // Top row
-        case (_, 0):
-            identifier = .header
-            text = "COL \(indexPath.row)"
-
-        // Left column
-        case (0, _):
-            identifier = .header
-            text = "ROW \(indexPath.section)"
-
-        // Inner-content
-        default:
-            identifier = .content
-            text = String(arc4random_uniform(100))
-        }
-
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: identifier.rawValue, for: indexPath
-            ) as? TextCollectionViewCell else {
-                assertionFailure("Expected a TextCollectionViewCell")
-                return UICollectionViewCell()
-        }
-
-        cell.text = text
+        dataSource?.configure(cell, with: "TEST")
 
         return cell
     }
@@ -70,7 +77,7 @@ extension SpreadsheetCollectionViewModel: UICollectionViewDelegate {
 }
 
 // MARK: - SpreadsheetLayoutDelegate
-extension SpreadsheetCollectionViewModel: SpreadsheetLayoutDelegate {
+extension SpreadsheetCollectionViewModel: SpreadsheetCollectionViewLayoutDelegate {
     func width(forColumn column: Int, collectionView: UICollectionView) -> CGFloat {
         return 100
     }

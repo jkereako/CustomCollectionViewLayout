@@ -10,23 +10,24 @@ import UIKit
 
 @UIApplicationMain
 final class AppDelegate: UIResponder {
-  var window: UIWindow?
+    var window: UIWindow?
 }
 
 // MARK: - UIApplicationDelegate
 extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
-        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let rootViewController = SpreadsheetViewController(
-            collectionViewLayout: SpreadsheetLayout()
-        )
+        let viewController = SpreadsheetViewController()
+        let viewModel = SpreadsheetCollectionViewModel()
+
+        viewController.viewModel = viewModel
 
         // The ol' fashioned way.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = rootViewController
+        window!.rootViewController = viewController
         window!.makeKeyAndVisible()
-
+        
         return true
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SpreadsheetLayoutDelegate: UICollectionViewDelegate {
+protocol SpreadsheetCollectionViewLayoutDelegate: UICollectionViewDelegate {
     func width(forColumn column: Int, collectionView: UICollectionView) -> CGFloat
     func height(forRow row: Int, collectionView: UICollectionView) -> CGFloat
 }

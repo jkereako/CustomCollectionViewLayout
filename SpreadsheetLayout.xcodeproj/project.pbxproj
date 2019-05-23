@@ -10,15 +10,13 @@
 		360891621D527B3C00012863 /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */; };
 		361AFA3F1D58C4A500D72803 /* SpreadsheetLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361AFA3E1D58C4A500D72803 /* SpreadsheetLayoutTests.swift */; };
 		365E160120EFEED70047814F /* SpreadsheetCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E160020EFEED70047814F /* SpreadsheetCollectionViewModel.swift */; };
-		365E160320EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E160220EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift */; };
 		365E160620EFF0F00047814F /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E160520EFF0F00047814F /* TextCollectionViewCell.swift */; };
-		36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */; };
-		62B044D722974DE500EDA82A /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B044D622974DE500EDA82A /* UICollectionView.swift */; };
+		36E2CCC41D47F57900DFCACA /* SpreadsheetCollectionViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2CCC31D47F57900DFCACA /* SpreadsheetCollectionViewLayoutDelegate.swift */; };
 		8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E31A3ED3A00027F925 /* AppDelegate.swift */; };
 		8259A7E61A3ED3A00027F925 /* SpreadsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */; };
 		8259A7EB1A3ED3A00027F925 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EA1A3ED3A00027F925 /* Images.xcassets */; };
 		8259A7EE1A3ED3A10027F925 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */; };
-		8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */; };
+		8259A8121A3ED5AC0027F925 /* SpreadsheetCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8259A8111A3ED5AC0027F925 /* SpreadsheetCollectionViewLayout.swift */; };
 		827A971F1A603E600055CFA1 /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -38,17 +36,15 @@
 		361AFA3E1D58C4A500D72803 /* SpreadsheetLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayoutTests.swift; sourceTree = "<group>"; };
 		361AFA401D58C4A500D72803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		365E160020EFEED70047814F /* SpreadsheetCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetCollectionViewModel.swift; sourceTree = "<group>"; };
-		365E160220EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetCollectionViewCellReuseIdentifier.swift; sourceTree = "<group>"; };
 		365E160520EFF0F00047814F /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
-		36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayoutDelegate.swift; sourceTree = "<group>"; };
-		62B044D622974DE500EDA82A /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		36E2CCC31D47F57900DFCACA /* SpreadsheetCollectionViewLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetCollectionViewLayoutDelegate.swift; sourceTree = "<group>"; };
 		8259A7DE1A3ED3A00027F925 /* SpreadsheetLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpreadsheetLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8259A7E21A3ED3A00027F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8259A7E31A3ED3A00027F925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewController.swift; sourceTree = "<group>"; };
 		8259A7EA1A3ED3A00027F925 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8259A7ED1A3ED3A10027F925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetLayout.swift; sourceTree = "<group>"; };
+		8259A8111A3ED5AC0027F925 /* SpreadsheetCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetCollectionViewLayout.swift; sourceTree = "<group>"; };
 		827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,17 +75,6 @@
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		365E160420EFF01B0047814F /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				365E160220EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift */,
-				365E160520EFF0F00047814F /* TextCollectionViewCell.swift */,
-				360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */,
-				827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */,
-			);
-			path = CollectionViewCells;
-			sourceTree = "<group>";
-		};
 		36E2CCBD1D47E8FB00DFCACA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,14 +82,6 @@
 				8259A7EC1A3ED3A10027F925 /* LaunchScreen.xib */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		62B044D522974DE500EDA82A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				62B044D622974DE500EDA82A /* UICollectionView.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8259A7D51A3ED3A00027F925 = {
@@ -130,9 +107,8 @@
 		8259A7E01A3ED3A00027F925 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				62B044D522974DE500EDA82A /* Extensions */,
-				8259A8111A3ED5AC0027F925 /* SpreadsheetLayout.swift */,
-				36E2CCC31D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift */,
+				8259A8111A3ED5AC0027F925 /* SpreadsheetCollectionViewLayout.swift */,
+				36E2CCC31D47F57900DFCACA /* SpreadsheetCollectionViewLayoutDelegate.swift */,
 				8259A80E1A3ED5480027F925 /* ViewControllers */,
 				8259A7E31A3ED3A00027F925 /* AppDelegate.swift */,
 			);
@@ -158,7 +134,9 @@
 		8259A80E1A3ED5480027F925 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				365E160420EFF01B0047814F /* CollectionViewCells */,
+				365E160520EFF0F00047814F /* TextCollectionViewCell.swift */,
+				360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */,
+				827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */,
 				8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */,
 				365E160020EFEED70047814F /* SpreadsheetCollectionViewModel.swift */,
 			);
@@ -221,6 +199,7 @@
 					};
 					8259A7DD1A3ED3A00027F925 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -277,13 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36E2CCC41D47F57900DFCACA /* SpreadsheetLayoutDelegate.swift in Sources */,
+				36E2CCC41D47F57900DFCACA /* SpreadsheetCollectionViewLayoutDelegate.swift in Sources */,
 				365E160120EFEED70047814F /* SpreadsheetCollectionViewModel.swift in Sources */,
 				8259A7E61A3ED3A00027F925 /* SpreadsheetViewController.swift in Sources */,
-				365E160320EFEFAD0047814F /* SpreadsheetCollectionViewCellReuseIdentifier.swift in Sources */,
-				8259A8121A3ED5AC0027F925 /* SpreadsheetLayout.swift in Sources */,
+				8259A8121A3ED5AC0027F925 /* SpreadsheetCollectionViewLayout.swift in Sources */,
 				8259A7E41A3ED3A00027F925 /* AppDelegate.swift in Sources */,
-				62B044D722974DE500EDA82A /* UICollectionView.swift in Sources */,
 				365E160620EFF0F00047814F /* TextCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayout;
 				PRODUCT_NAME = SpreadsheetLayout;
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -529,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.SpreadsheetLayout;
 				PRODUCT_NAME = SpreadsheetLayout;
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
