@@ -89,7 +89,7 @@
 			children = (
 				8259A7DF1A3ED3A00027F925 /* Products */,
 				36E2CCBD1D47E8FB00DFCACA /* Resources */,
-				8259A7E01A3ED3A00027F925 /* Source */,
+				8259A7E01A3ED3A00027F925 /* Sources */,
 				8259A7E11A3ED3A00027F925 /* SupportFiles */,
 				8259A7F61A3ED3A10027F925 /* Tests */,
 			);
@@ -104,15 +104,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8259A7E01A3ED3A00027F925 /* Source */ = {
+		8259A7E01A3ED3A00027F925 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				365E160520EFF0F00047814F /* TextCollectionViewCell.swift */,
+				360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */,
+				827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */,
+				8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */,
+				365E160020EFEED70047814F /* SpreadsheetCollectionViewModel.swift */,
 				8259A8111A3ED5AC0027F925 /* SpreadsheetCollectionViewLayout.swift */,
 				36E2CCC31D47F57900DFCACA /* SpreadsheetCollectionViewLayoutDelegate.swift */,
-				8259A80E1A3ED5480027F925 /* ViewControllers */,
 				8259A7E31A3ED3A00027F925 /* AppDelegate.swift */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		8259A7E11A3ED3A00027F925 /* SupportFiles */ = {
@@ -129,18 +133,6 @@
 				361AFA3D1D58C4A500D72803 /* UnitTests */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		8259A80E1A3ED5480027F925 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				365E160520EFF0F00047814F /* TextCollectionViewCell.swift */,
-				360891611D527B3C00012863 /* HeaderCollectionViewCell.xib */,
-				827A971D1A603E600055CFA1 /* ContentCollectionViewCell.xib */,
-				8259A7E51A3ED3A00027F925 /* SpreadsheetViewController.swift */,
-				365E160020EFEED70047814F /* SpreadsheetCollectionViewModel.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
