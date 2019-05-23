@@ -9,7 +9,7 @@
 import UIKit
 
 final class SpreadsheetViewController: UICollectionViewController {
-    private var dataSource = SpreadsheetCollectionViewDataSource()
+    private var viewModel = SpreadsheetCollectionViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +19,9 @@ final class SpreadsheetViewController: UICollectionViewController {
             return
         }
         
-        collectionView!.dataSource = dataSource
-        layout.delegate = self
+        collectionView?.dataSource = viewModel
+        collectionView?.delegate = viewModel
+        layout.delegate = viewModel
         
         let reuseIdentifierMap = [
             SpreadsheetCollectionViewCellReuseIdentifier.header.rawValue: TextCollectionViewCell.self,
@@ -31,15 +32,3 @@ final class SpreadsheetViewController: UICollectionViewController {
         collectionView!.registerNibsWithReuseIdentifierMap(reuseIdentifierMap)
     }
 }
-
-// MARK: - SpreadsheetLayoutDelegate
-extension SpreadsheetViewController: SpreadsheetLayoutDelegate {
-    func width(forColumn column: Int, collectionView: UICollectionView) -> CGFloat {
-        return 100
-    }
-    
-    func height(forRow row: Int, collectionView: UICollectionView) -> CGFloat {
-        return 75
-    }
-}
-

@@ -21,35 +21,35 @@ final class SpreadsheetLayoutTests: XCTestCase {
   override func setUp() {
     super.setUp()
     
-    storyboard = UIStoryboard(name: Identifier.Storyboard.rawValue, bundle: NSBundle.mainBundle())
-    sut = storyboard.instantiateViewControllerWithIdentifier(Identifier.ViewController.rawValue) as!
+    storyboard = UIStoryboard(name: Identifier.Storyboard.rawValue, bundle: Bundle.main)
+    sut = storyboard.instantiateViewController(withIdentifier: Identifier.ViewController.rawValue) as!
     SpreadsheetViewController
     
     // This line gurantees that the initial view controller is the SpreadsheetViewController
-    UIApplication.sharedApplication().keyWindow!.rootViewController = sut
+    UIApplication.shared.keyWindow!.rootViewController = sut
   }
   
   override func tearDown() {
     storyboard = nil
     sut = nil
-    UIApplication.sharedApplication().keyWindow!.rootViewController = nil
+    UIApplication.shared.keyWindow!.rootViewController = nil
     
     super.tearDown()
   }
   
   func testStoryboardIsNotNil() {
     XCTAssertNotNil(
-      UIStoryboard(name: Identifier.Storyboard.rawValue, bundle: NSBundle.mainBundle())
+        UIStoryboard(name: Identifier.Storyboard.rawValue, bundle: Bundle.main)
     )
   }
   
   func testViewControllerIsNotNil() {
     let storyboard = UIStoryboard(
-      name: Identifier.Storyboard.rawValue, bundle: NSBundle.mainBundle()
+        name: Identifier.Storyboard.rawValue, bundle: Bundle.main
     )
     
-    let viewController = storyboard.instantiateViewControllerWithIdentifier(
-      Identifier.ViewController.rawValue
+    let viewController = storyboard.instantiateViewController(
+        withIdentifier: Identifier.ViewController.rawValue
       ) as! SpreadsheetViewController
     
     XCTAssertNotNil(viewController)

@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class SpreadsheetCollectionViewDataSource: NSObject {}
+final class SpreadsheetCollectionViewModel: NSObject {}
 
 // MARK: - UICollectionViewDataSource
-extension SpreadsheetCollectionViewDataSource: UICollectionViewDataSource {
+extension SpreadsheetCollectionViewModel: UICollectionViewDataSource {
     // i.e. rows
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 10
@@ -59,5 +59,23 @@ extension SpreadsheetCollectionViewDataSource: UICollectionViewDataSource {
         cell.text = text
 
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension SpreadsheetCollectionViewModel: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        debugPrint("Selected item at \(indexPath)")
+    }
+}
+
+// MARK: - SpreadsheetLayoutDelegate
+extension SpreadsheetCollectionViewModel: SpreadsheetLayoutDelegate {
+    func width(forColumn column: Int, collectionView: UICollectionView) -> CGFloat {
+        return 100
+    }
+
+    func height(forRow row: Int, collectionView: UICollectionView) -> CGFloat {
+        return 75
     }
 }
